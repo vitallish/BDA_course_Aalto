@@ -251,6 +251,7 @@ _region_.*
 *.swp
 .Rproj.user
 *.Rproj
+.Rhistory
 
 # Generated tex by Sweave
 assignments/*.tex
