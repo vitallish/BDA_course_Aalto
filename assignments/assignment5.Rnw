@@ -107,13 +107,13 @@ example of section 3.7 in BDA3 using the Metropolis algorithm. The Metropolis al
     \text{N} \left(\vs \mu_0, \vc \Sigma_0 \right), \qquad
     \text{where} \quad
     \vs \mu_0 = \begin{bmatrix} 0 \\ 10 \end{bmatrix} \quad \text{and} \quad
-    \vc \Sigma_0 = \begin{bmatrix} 2^2 & 10 \\ 10 & 10^2 \end{bmatrix}.
+    \vc \Sigma_0 = \begin{bmatrix} 2^2 & 12 \\ 12 & 10^2 \end{bmatrix}.
 \end{align*}
 
 \begin{itemize}
 \item[a)] Start by implementing a function called \texttt{density\_ratio} to compute the density ratio function, $r$ in Eq. (11.1) in BDA3. Below is an example on how the function should work. You can test  the function using {\tt markmyassignment}.
 <<echo=FALSE>>=
-density_ratio <- function(alpha_propose, alpha_previous, beta_propose, beta_previous, x, y, n) 1.187524
+density_ratio <- function(alpha_propose, alpha_previous, beta_propose, beta_previous, x, y, n) 1.305179
 @
 
 <<echo=TRUE, eval=FALSE>>=
@@ -128,7 +128,7 @@ density_ratio(alpha_propose = 1.89, alpha_previous = 0.374,
 @
 
 <<echo=FALSE>>=
-density_ratio <- function(alpha_propose, alpha_previous, beta_propose, beta_previous, x, y, n) 0.8420882
+density_ratio <- function(alpha_propose, alpha_previous, beta_propose, beta_previous, x, y, n) 0.7661784
 @
 
 <<echo=TRUE>>=
@@ -137,7 +137,7 @@ density_ratio(alpha_propose = 0.374, alpha_previous = 1.89,
               x = bioassay$x, y = bioassay$y, n = bioassay$n)
 @
 
-\textbf{Hint!} Compute with log-densities. Reasons are explained on page 261 of BDA3 and  lecture video 4.1. Remember that $p_1/p_0=\exp(\log(p_1)-\log(p_0))$. For your convenience we have provided functions that will evaluate the log-likelihood for given $\alpha$ and $\beta$ (see {\tt bioassaylp()} in the {\tt aaltobda} package). Notice that you still need to add the prior yourself and remember the unnormalized log posterior is simply the sum of log-likelihood and log-prior. For evaluating the log of the Gaussian prior you can use the function {\tt dmvnorm} from package {\tt aaltobda}. It can be worthwhile to look up your implementation of {\tt p\_log\_posterior()} in Assignment 4.
+\textbf{Hint!} Compute with log-densities. Reasons are explained on page 261 of BDA3 and  lecture video 4.1. Remember that $p_1/p_0=\exp(\log(p_1)-\log(p_0))$. For your convenience we have provided functions that will evaluate the log-likelihood for given $\alpha$ and $\beta$ (see {\tt bioassaylp()} in the {\tt aaltobda} package). Notice that you still need to add the prior yourself and remember the unnormalized log posterior is simply the sum of log-likelihood and log-prior. For evaluating the log of the Gaussian prior you can use the function {\tt dmvnorm} from package {\tt aaltobda}. 
 
 \item[b)] Now implement a function called {\tt Metropolis\_bioassay()} which implements the Metropolis algorithm  using the {\tt density\_ratio()}.
 
