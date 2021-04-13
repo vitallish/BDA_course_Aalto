@@ -102,9 +102,9 @@
       "RemoteRepo": "BDA_course_Aalto",
       "RemoteUsername": "avehtari",
       "RemoteRef": "HEAD",
-      "RemoteSha": "dfecdb879a23a3a3c0c6f152c199d3241e988756",
+      "RemoteSha": "6e4f2733de69d8506050f7b0d5b6bbc157adffb0",
       "RemoteSubdir": "rpackage",
-      "Hash": "90ce75dab7e3670ecb93610fe8336827"
+      "Hash": "58b882658ff5b1dcc72cd8c51f7c5173"
     },
     "askpass": {
       "Package": "askpass",
